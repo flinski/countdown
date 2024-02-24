@@ -1,22 +1,23 @@
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
-  --color-dark: #191a23;
-  --color-dark-alt: #292a32;
+  --color-dark: #000000;
   --color-light: #ffffff;
-  --color-accent: #b9ff66;
-  --color-gray: #f3f3f3;
-  --color-gray-alt: #898989;
-  --border: 0.0625rem solid var(--color-dark);
-  --border-radius: 0.875rem;
-  --border-radius-small: 0.4375rem;
-  --border-radius-large: 2.8125rem;
-  --shadow: 0 0.3125rem 0 0 var(--color-dark);
-  --font-family-primary: "Space Grotesk", sans-serif;
-  --container-width: 77.5rem;
-  --container-padding-inline: 1.25rem;
-  --section-padding-block: 4.375rem;
-  --input-height: 3.6875rem;
-  --button-height: 4.25rem;
-  --transition-duration: 0.2s;
+  --color-accent: #cc0000;
+  --color-accent-dark: #1f0000;
+  --font-family: "Inter", sans-serif;
 }
 
 *,
@@ -83,48 +84,16 @@ svg * {
 }
 
 body {
-  font-family: var(--font-family-primary);
-  font-size: clamp(1rem, 0.9583333333rem + 0.1851851852vw, 1.125rem);
+  font-family: var(--font-family);
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-dark);
-  background-color: var(--color-light);
-}
-
-a,
-button,
-input,
-textarea,
-svg * {
-  transition-duration: var(--transition-duration);
-}
-
-h1 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
-}
-
-h2 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
-}
-
-h3 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
-}
-
-h4 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
-}
-
-h5 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
-}
-
-h6 {
-  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+  color: var(--color-light);
+  background-color: var(--color-dark);
 }
 
 .wrapper {
-  min-height: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -157,4 +126,123 @@ h6 {
   .visible-mobile {
     display: none !important;
   }
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.875rem;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.625rem;
+  display: none;
+}
+
+.clock {
+  display: flex;
+  column-gap: 2.5rem;
+}
+
+.number-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.875rem;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.5rem;
+}
+.digit {
+  position: relative;
+  width: 6.25rem;
+  height: 11.875rem;
+}
+.segment {
+  border-radius: 0.3125rem;
+  background-color: var(--color-accent-dark);
+  transition-duration: 0.2s;
+}
+.segment--on {
+  background-color: var(--color-accent);
+  box-shadow: 0 0 3.125rem 0 rgba(218, 24, 24, 0.75);
+}
+.segment:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0.625rem;
+  width: 5rem;
+  height: 0.625rem;
+}
+.segment:nth-child(2) {
+  position: absolute;
+  top: 0.625rem;
+  right: 0;
+  width: 0.625rem;
+  height: 5rem;
+}
+.segment:nth-child(3) {
+  position: absolute;
+  top: 6.25rem;
+  right: 0;
+  width: 0.625rem;
+  height: 5rem;
+}
+.segment:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  left: 0.625rem;
+  width: 5rem;
+  height: 0.625rem;
+}
+.segment:nth-child(5) {
+  position: absolute;
+  top: 6.25rem;
+  left: 0;
+  width: 0.625rem;
+  height: 5rem;
+}
+.segment:nth-child(6) {
+  position: absolute;
+  top: 0.625rem;
+  left: 0;
+  width: 0.625rem;
+  height: 5rem;
+}
+.segment:nth-child(7) {
+  position: absolute;
+  top: 5.625rem;
+  left: 0.625rem;
+  width: 5rem;
+  height: 0.625rem;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.separator {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  margin-top: 2.8125rem;
+}
+
+.dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0.625rem 0 rgba(218, 24, 24, 0.75);
 }
