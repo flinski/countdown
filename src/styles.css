@@ -1,0 +1,160 @@
+:root {
+  --color-dark: #191a23;
+  --color-dark-alt: #292a32;
+  --color-light: #ffffff;
+  --color-accent: #b9ff66;
+  --color-gray: #f3f3f3;
+  --color-gray-alt: #898989;
+  --border: 0.0625rem solid var(--color-dark);
+  --border-radius: 0.875rem;
+  --border-radius-small: 0.4375rem;
+  --border-radius-large: 2.8125rem;
+  --shadow: 0 0.3125rem 0 0 var(--color-dark);
+  --font-family-primary: "Space Grotesk", sans-serif;
+  --container-width: 77.5rem;
+  --container-padding-inline: 1.25rem;
+  --section-padding-block: 4.375rem;
+  --input-height: 3.6875rem;
+  --button-height: 4.25rem;
+  --transition-duration: 0.2s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: clamp(1rem, 0.9583333333rem + 0.1851851852vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+h1 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+h3 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+h4 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+h5 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+h6 {
+  font-size: clamp(2.6875rem, 2.3333333333rem + 1.5740740741vw, 3.75rem);
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: calc(var(--container-width) + 2 * var(--container-padding-inline));
+  margin-inline: auto;
+  padding-inline: var(--container-padding-inline);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 47.99875em) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48em) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
